@@ -1,0 +1,378 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+body {
+    font-family: "Open Sans", sans-serif;
+
+}
+
+/* Start header */
+.header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav .links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.nav .links ul li {
+    list-style: none;
+    padding: 38px 10px;
+
+}
+
+.nav .links ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav .links ul li:hover {
+    border-bottom: 1px solid #19c8fa;
+    color: #19c8fa;
+}
+
+.nav .links ul li:hover a {
+    color: #19c8fa;
+}
+
+.nav i {
+    padding: 40px 10px;
+    color: white;
+}
+
+/*home*/
+
+.home {
+    background-image: url("../images/landing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.cover {
+    height: 100%;
+    position: relative;
+    background-color: #00000099;
+}
+
+.home .home-main {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 50px;
+    background-color: rgb(15 116 143 / 70%);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home .home-main .home-text {
+    max-width: 500px;
+}
+
+.home .home-main .home-text h2 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+}
+
+.home .home-main .home-text p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.home i {
+    position: absolute;
+    color: white;
+    font-size: 25px;
+}
+
+.home .fa-angle-left {
+    top: calc(50% - 12.5px);
+    left: 30px;
+}
+
+.home .fa-angle-right {
+    top: calc(50% - 12.5px);
+    right: 30px;
+}
+
+.home .circles {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 40px);
+    bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    justify-content: space-between;
+}
+
+.home .circles div {
+    background-color: transparent;
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.home .circles :nth-child(2) {
+    background-color: #19c8fa;
+    border-color: #19c8fa;
+}
+
+/* End home  */
+/* start SERVICES */
+.services {
+    margin-bottom: 100px;
+
+}
+
+.section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.section-head h2 {
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.section-head p {
+    width: 550px;
+    text-align: center;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+    margin: 0 auto 100px;
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+}
+
+.card {
+    display: flex;
+
+}
+
+.card .text h3 {
+    margin-bottom: 30px;
+    color: #19c8fa;
+}
+
+.card .text p {
+    line-height: 2;
+    color: #777;
+
+}
+
+.card i {
+    margin-right: 50px;
+    font-weight: 900;
+    font-size: 45px;
+
+}
+
+/* end SERVICES */
+/* start design */
+.design {
+    background-image: url("../images/design-features.jpg");
+    position: relative;
+    height: 600px;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.design .design-content {
+    position: absolute;
+    right: 0;
+    margin-top: 110px;
+    z-index: 2;
+    margin-bottom: 110px;
+    width: 720px;
+    height: 380px;
+    background-color: rgb(15 116 143 / 70%);
+}
+
+.design .design-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-top: 50px;
+    color: white;
+}
+
+.design .design-content h2 {
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.design .colum {
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.design .row {
+    display: flex;
+    gap: 20px;
+}
+
+.design .img {
+    position: absolute;
+    z-index: 2;
+    bottom: -80px;
+
+}
+
+
+/* End design */
+
+/* start special icon */
+.icon {
+    position: relative;
+    width: 120px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+.c {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #333;
+    left: calc(50% - 8px);
+    top: -7px;
+    z-index: 1;
+}
+
+/* end special icon */
+
+.catalog {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 60px;
+}
+
+.catalog span {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.catalog .active {
+    background-color: #19c8fa;
+    color: white;
+}
+
+.protfolio .photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+}
+
+.protfolio .photos img {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.protfolio .photos .box {
+    position: relative;
+    overflow: hidden;
+}
+
+.protfolio .photos .caption {
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+    transition: 0.3s;
+    bottom: -100%;
+}
+
+.protfolio .photos .box:hover .caption {
+    display: block;
+    bottom: 0;
+}
+
+.protfolio .photos .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+.protfolio .photos .caption h4 {
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+.protfolio .photos .caption p {
+    color: #19c8fa;
+}
