@@ -12,25 +12,32 @@
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-  }
-  /* Small */
-  @media (min-width: 768px) {
+}
+
+/* Small */
+@media (min-width: 768px) {
     .container {
-      width: 750px;
+        width: 750px;
     }
-  }
-  /* Medium */
-  @media (min-width: 992px) {
+}
+
+/* Medium */
+@media (min-width: 992px) {
     .container {
-      width: 970px;
+        width: 970px;
     }
-  }
-  /* Large */
-  @media (min-width: 1200px) {
+}
+
+/* Large */
+@media (min-width: 1200px) {
     .container {
-      width: 1170px;
+        width: 1170px;
     }
-  }
+}
+
+li {
+    list-style: none;
+}
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -43,17 +50,31 @@ body {
     left: 0;
     width: 100%;
     z-index: 2;
-   
+    min-height: 65px;
+    overflow: hidden;
+
 }
-.header .container::after{
+
+.header .container {
+    height: 100%;
+    position: relative;
+}
+
+.header hr {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* .header .container::after{
     content: "";
     position: absolute;
     height: 1px;
     background-color: #a2a2a2;
     bottom: 0;
-    width:100% ;
+    width: calc(100% - 30px);
     left: 15px;
-}
+} */
 
 .nav {
     display: flex;
@@ -66,21 +87,23 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    align-items: center;
 }
 
 .nav .links ul li {
     list-style: none;
     padding: 35px 10px;
-    
-
 }
+
 @media (max-width: 768px) {
-    
-.nav .links ul li {
-      display: none;
+    .nav .links ul li {
+        display: none;
     }
-  }
+
+    .nav .links ul .search {
+        display: block;
+    }
+}
 
 .nav .links ul a {
     text-decoration: none;
@@ -100,29 +123,28 @@ body {
 }
 
 .nav i {
-    
+
     color: white;
-   font-size: 20px;
-    
-}
-.nav .search{
-    text-align: center;
-    border-left: 1px solid white;
-    height: 30px;
-    padding-left: 20px;
+    font-size: 20px;
 }
 
+.nav .search {
+    text-align: center;
+    width: 59px;
+    margin-left: 10px;
+    border-left: 1px solid white;
+    padding: 8px 0 !important;
+}
 
 /*home*/
-
 .home {
     background-image: url("../images/landing.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
-
 
 .cover {
     height: 100%;
@@ -152,7 +174,6 @@ body {
     font-weight: normal;
     line-height: 1.5;
     margin-bottom: 20px;
-
 }
 
 .home .home-main .home-text p {
@@ -230,16 +251,27 @@ body {
     margin: 0 auto 100px;
 }
 
-.services .services-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    grid-column-gap: 40px;
-    grid-row-gap: 60px;
+@media (min-width: 768px) {
+    .services .services-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 60px;
+    }
 }
 
 .card {
     display: flex;
+}
 
+@media (max-width: 768px) {
+    .services .card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+        width: 100%;
+    }
 }
 
 .card .text h3 {
@@ -250,7 +282,6 @@ body {
 .card .text p {
     line-height: 2;
     color: #777;
-
 }
 
 .card i {
@@ -260,33 +291,44 @@ body {
 
 }
 
+@media (max-width: 768px) {
+    .card i {
+        margin-right: 0;
+        margin-bottom: 35px;
+    }
+}
+
 /* end SERVICES */
 /* start design */
 .design {
-    background-image: url("../images/design-features.jpg");
-    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
     height: 600px;
+    position: relative;
+    background-image: url(../images/design-features.jpg);
     background-size: cover;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
 
-.design .design-content {
+.design::before {
+    content: "";
     position: absolute;
-    right: 0;
-    margin-top: 110px;
-    z-index: 2;
-    margin-bottom: 110px;
-    width: 720px;
-    height: 380px;
-    background-color: rgb(15 116 143 / 70%);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
 }
 
 .design .design-content {
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-    padding-top: 50px;
     color: white;
+    padding: 50px;
+    background-color: rgb(15 116 143 / 70%);
+    position: relative;
+    z-index: 2;
+    flex: 1;
 }
 
 .design .design-content h2 {
@@ -307,12 +349,24 @@ body {
 }
 
 .design .img {
-    position: absolute;
+    position: relative;
     z-index: 2;
-    bottom: -80px;
+    flex: 1;
+    text-align: center;
 
 }
 
+.design .img img {
+    position: relative;
+    bottom: -150px;
+}
+
+
+@media (max-width: 768px) {
+    .design .img {
+        display: none;
+    }
+}
 
 /* End design */
 
@@ -344,6 +398,10 @@ body {
 }
 
 /* end special icon */
+.portfolio {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
 
 .catalog {
     display: flex;
@@ -362,22 +420,22 @@ body {
     color: white;
 }
 
-.protfolio .photos {
+.portfolio .photos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
 }
 
-.protfolio .photos img {
+.portfolio .photos img {
     width: 100%;
     transition: 0.3s;
 }
 
-.protfolio .photos .box {
+.portfolio .photos .box {
     position: relative;
     overflow: hidden;
 }
 
-.protfolio .photos .caption {
+.portfolio .photos .caption {
     position: absolute;
     left: 0;
     padding: 20px;
@@ -387,21 +445,289 @@ body {
     bottom: -100%;
 }
 
-.protfolio .photos .box:hover .caption {
+.portfolio .photos .box:hover .caption {
     display: block;
     bottom: 0;
 }
 
-.protfolio .photos .box:hover img {
+.portfolio .photos .box:hover img {
     transform: rotate(3deg) scale(1.1);
 }
 
-.protfolio .photos .caption h4 {
+.portfolio .photos .caption h4 {
     font-size: 18px;
     font-weight: 400;
     padding-bottom: 5px;
 }
 
-.protfolio .photos .caption p {
+.portfolio .photos .caption p {
     color: #19c8fa;
+}
+
+.portfolio .more {
+    background-color: #19c8fa;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    text-decoration: none;
+}
+
+
+/*video*/
+.video {
+    position: relative;
+}
+
+.video::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 40%);
+}
+
+.video video {
+    width: 100%;
+}
+
+.video .text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    background-color: rgb(15 116 143 / 70%);
+    color: white;
+    text-align: center;
+}
+
+.video .text h2 {
+    margin: 0 0 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.video .text p {
+    margin-bottom: 30px;
+}
+
+.video .text button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+
+.about {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.about .container {
+    overflow: hidden;
+}
+
+.about img {
+    position: relative;
+    bottom: -120px;
+    margin-top: -120px;
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+    .about img {
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
+
+
+.stats {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url("../images/stats.png");
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+
+.stats::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+.stats .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.stats .stat {
+    color: white;
+    padding: 50px;
+    background-color: rgb(15 116 143 / 70%);
+
+}
+
+@media (min-width: 768px) {
+    .stats .container .stat {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .stats .container .stat {
+        flex-basis: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .stats .container .stat {
+        flex-basis: 100%;
+    }
+}
+
+.stats .stat i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+}
+
+.stats .stat h3 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.stats .stat p {
+    font-size: 14px;
+}
+
+
+.quote {
+    background-image: url("../images/quote.jpg");
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    text-align: center;
+    color: white;
+
+}
+
+.quote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 75%);
+}
+
+.quote .container {
+    position: relative;
+}
+
+.quote q {
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+.pricing {
+    text-align: center;
+}
+
+.pricing .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+
+}
+
+.pricing .plans .plan {
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.pricing .plans .plan .info {
+    padding: 40px 20px;
+    border-top: 1px solid #19c8fa;
+    border-bottom: 1px solid #19c8fa;
+}
+
+.pricing .plans .plan .info h3 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.pricing .plans .plan .info span {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.pricing .plans .plan .info span::before {
+    content: "$";
+    font-size: 25px;
+    position: relative;
+    top: -40px;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.pricing .plans .plan .info span::after {
+    content: "/Mo";
+    font-size: 20px;
+    position: relative;
+    right: -15px;
+}
+
+.pricing .plans .plan ul {
+    padding: 0;
+    border-bottom: 1px solid #19c8fa;
+    text-align: center;
+
+}
+
+.pricing .plans .plan li {
+    padding: 20px;
+    position: relative;
+}
+
+.pricing .plans .plan ul li:not(:last-child)::after {
+    content: "";
+    width: 140px;
+    height: 1px;
+    background-color: #19c8fa;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.pricing .plans .plan a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    border: 1px solid #19c8fa;
+    width: fit-content;
+    margin: 30px auto;
 }
